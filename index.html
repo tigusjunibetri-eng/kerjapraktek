@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kerja Praktek Fakultas Sains dan Teknologi</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      font-family:'Poppins', sans-serif;
+
+      background:#f5f9ff;
+
+      color:#333;
+
+      overflow-x:hidden;
+    }
+
+    /* ================= HEADER ================= */
+
+    header{
+
+      position:fixed;
+
+      top:0;
+      left:0;
+
+      width:100%;
+
+      z-index:1000;
+
+      padding:18px 8%;
+
+      background:rgba(0,40,85,0.35);
+
+      backdrop-filter:blur(12px);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+
+      width:100%;
+
+      min-height:100vh;
+
+      background:
+      linear-gradient(
+      rgba(0,20,50,0.60),
+      rgba(0,20,50,0.72)
+      ),
+      url('images/gedung.jpeg');
+
+      background-size:cover;
+
+      background-position:center;
+
+      background-repeat:no-repeat;
+
+      display:flex;
+
+      align-items:center;
+
+      padding:120px 8% 80px;
+
+      position:relative;
+    }
+
+    .hero::after{
+
+      content:'';
+
+      position:absolute;
+
+      bottom:0;
+      left:0;
+
+      width:100%;
+
+      height:120px;
+
+      background:linear-gradient(
+      to top,
+      #f5f9ff,
+      transparent
+      );
+    }
+
+    .hero-content{
+
+      position:relative;
+
+      z-index:2;
+
+      max-width:760px;
+
+      padding:45px;
+
+      border-radius:30px;
+
+      background:rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(12px);
+
+      border:1px solid rgba(255,255,255,0.15);
+
+      box-shadow:0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    /* ================= HERO TITLE ================= */
+
+    .hero-title{
+
+      display:flex;
+
+      align-items:center;
+
+      gap:18px;
+
+      margin-bottom:25px;
+    }
+
+    .hero-logo{
+
+      width:120px;
+
+      height:auto;
+
+      object-fit:contain;
+
+      flex-shrink:0;
+
+      background:transparent;
+
+      padding:0;
+
+      border-radius:0;
+
+      box-shadow:none;
+
+      filter:
+      drop-shadow(
+      0 0 10px rgba(255,255,255,0.15)
+      );
+
+      transition:0.3s;
+    }
+
+    .hero-logo:hover{
+
+      transform:scale(1.05);
+    }
+
+    .hero-text{
+
+      max-width:500px;
+    }
+
+    .hero-text h1{
+
+      color:white;
+
+      font-size:56px;
+
+      line-height:1.15;
+
+      margin:0;
+
+      font-weight:700;
+    }
+
+    .hero-content p{
+
+      color:#f1f1f1;
+
+      line-height:1.9;
+
+      font-size:18px;
+
+      margin-bottom:35px;
+    }
+
+    /* ================= BUTTON ================= */
+
+    .btn-group{
+
+      display:flex;
+
+      gap:15px;
+
+      flex-wrap:wrap;
+    }
+
+    .btn{
+
+      padding:14px 28px;
+
+      border-radius:12px;
+
+      text-decoration:none;
+
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .btn-primary{
+
+      background:#1b74e4;
+
+      color:white;
+
+      box-shadow:0 10px 25px rgba(27,116,228,0.4);
+    }
+
+    .btn-primary:hover{
+
+      transform:translateY(-4px);
+
+      background:#1665c1;
+    }
+
+    .btn-secondary{
+
+      border:2px solid white;
+
+      color:white;
+    }
+
+    .btn-secondary:hover{
+
+      background:white;
+
+      color:#0b3d91;
+    }
+
+    /* ================= SECTION ================= */
+
+    section{
+
+      padding:90px 8%;
+    }
+
+    .section-title{
+
+      text-align:center;
+
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+
+      color:#0b3d91;
+
+      font-size:40px;
+
+      margin-bottom:12px;
+    }
+
+    .section-title p{
+
+      color:#666;
+
+      font-size:17px;
+    }
+
+    /* ================= PROGRAM STUDI ================= */
+
+    .cards{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(250px,1fr));
+
+      gap:30px;
+    }
+
+    .card{
+
+      background:white;
+
+      border-radius:25px;
+
+      padding:35px 30px;
+
+      text-align:center;
+
+      transition:0.4s;
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.07);
+    }
+
+    .card:hover{
+
+      transform:translateY(-10px);
+    }
+
+    .prodi-logo{
+
+      width:110px;
+
+      height:110px;
+
+      object-fit:contain;
+
+      margin-bottom:20px;
+
+      transition:0.4s;
+    }
+
+    .card:hover .prodi-logo{
+
+      transform:scale(1.08);
+    }
+
+    .card h3{
+
+      color:#0b3d91;
+
+      margin-bottom:15px;
+
+      font-size:23px;
+    }
+
+    .card p{
+
+      color:#666;
+
+      line-height:1.8;
+
+      font-size:15px;
+    }
+
+    /* ================= TIMELINE ================= */
+
+    .timeline-wrapper{
+
+      display:flex;
+
+      flex-wrap:nowrap;
+
+      justify-content:center;
+
+      align-items:stretch;
+
+      gap:18px;
+
+      overflow-x:auto;
+
+      padding-bottom:10px;
+    }
+
+    .timeline-card{
+
+      min-width:190px;
+
+      background:white;
+
+      border-radius:25px;
+
+      padding:35px 20px;
+
+      text-align:center;
+
+      transition:0.4s;
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.07);
+    }
+
+    .timeline-card:hover{
+
+      transform:translateY(-10px);
+    }
+
+    .number{
+
+      width:65px;
+
+      height:65px;
+
+      margin:auto;
+
+      margin-bottom:20px;
+
+      border-radius:50%;
+
+      background:#1b74e4;
+
+      color:white;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      font-size:24px;
+
+      font-weight:bold;
+    }
+
+    .number i{
+
+      font-size:22px;
+    }
+
+    .timeline-card h3{
+
+      color:#0b3d91;
+
+      margin-bottom:10px;
+    }
+
+    .timeline-card p{
+
+      color:#666;
+
+      line-height:1.8;
+
+      font-size:14px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+
+      background:#08295a;
+
+      color:white;
+
+      padding:40px 8%;
+
+      text-align:center;
+    }
+
+    footer p{
+
+      line-height:1.9;
+
+      opacity:0.95;
+    }
+
+    .partof{
+
+      color:#5ec8ff;
+
+      font-style:italic;
+    }
+	
+	/* ================= FOOTER FLEX ================= */
+
+.footer-content{
+
+  position:relative;
+
+  text-align:center;
+}
+
+/* ================= WA BUTTON ================= */
+
+.wa-admin{
+
+  position:absolute;
+
+  right:0;
+
+  bottom:0;
+
+  text-decoration:none;
+
+  color:rgba(255,255,255,0.78);
+
+  font-size:14px;
+
+  transition:0.3s;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+}
+
+.wa-admin:hover{
+
+  color:#7dffb0;
+}
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:768px){
+
+      .hero{
+
+        padding-top:140px;
+      }
+
+      .hero-content{
+
+        padding:30px;
+      }
+
+      .hero-title{
+
+        flex-direction:column;
+
+        text-align:center;
+      }
+
+      .hero-text h1{
+
+        font-size:38px;
+      }
+
+      .hero-content p{
+
+        font-size:16px;
+      }
+
+      .section-title h2{
+
+        font-size:32px;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .hero-text h1{
+
+        font-size:30px;
+      }
+
+      .btn{
+
+        width:100%;
+
+        text-align:center;
+      }
+
+      .timeline-card{
+
+        min-width:180px;
+      }
+
+      .hero-logo{
+
+        width:90px;
+
+        height:auto;
+      }
+
+    }
+
+/* ================= BANNER ================= */
+
+/* ================= BANNER ================= */
+
+.banner-section{
+
+width:100%;
+
+padding:5px 8% 0px;
+
+margin-top:-35px;
+
+margin-bottom:-45px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.banner-section img{
+
+width:100%;
+
+height:320px;
+
+display:block;
+
+object-fit:cover;
+
+border-radius:35px;
+
+opacity:0.98;
+
+filter:
+brightness(1.02)
+saturate(0.93);
+
+box-shadow:
+0 12px 30px rgba(13,71,181,0.08);
+
+transition:0.4s ease;
+}
+
+/* HOVER */
+
+.banner-section img:hover{
+
+transform:scale(1.005);
+
+box-shadow:
+0 18px 35px rgba(13,71,181,0.12);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.banner-section{
+
+padding:0px 5%;
+
+margin-top:-20px;
+
+margin-bottom:-20px;
+
+}
+
+.banner-section img{
+
+height:180px;
+
+border-radius:22px;
+
+}
+
+}
+
+
+/* ================= DROPDOWN ================= */
+
+.dropdown{
+  position:relative;
+  display:inline-block;
+}
+
+.dropdown-btn{
+
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+.dropdown-btn .fa-caret-down{
+
+  font-size:14px;
+  transition:0.3s;
+}
+
+.dropdown:hover .fa-caret-down{
+
+  transform:rotate(180deg);
+}
+
+.dropdown-content{
+
+  opacity:0;
+  visibility:hidden;
+
+  position:absolute;
+
+  top:100%;
+  left:0;
+
+  margin-top:8px;
+
+  min-width:290px;
+
+  background:white;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 18px 40px rgba(0,0,0,0.15);
+
+  z-index:999;
+
+  transition:0.25s ease;
+
+  transform:translateY(10px);
+}
+
+/* area penghubung hover */
+.dropdown::after{
+  content:'';
+  position:absolute;
+  left:0;
+  top:100%;
+  width:100%;
+  height:15px;
+}
+
+.dropdown-content a{
+
+  display:block;
+
+  padding:17px 22px;
+
+  text-decoration:none;
+
+  color:#333;
+
+  font-weight:500;
+
+  transition:0.3s;
+}
+
+.dropdown-content a:hover{
+
+  background:#f3f8ff;
+
+  color:#0b3d91;
+
+  padding-left:30px;
+}
+
+.dropdown:hover .dropdown-content{
+
+  opacity:1;
+  visibility:visible;
+
+  transform:translateY(0);
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header></header>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-title">
+
+        <img src="images/saintek.png"
+        alt="Logo Saintek"
+        class="hero-logo">
+
+        <div class="hero-text">
+
+          <h1>
+            Kerja Praktek
+          </h1>
+
+        </div>
+
+      </div>
+
+      <p>
+        Kerja Praktek (KP) Fakultas Sains dan Teknologi, UIN Raden Mas Said Surakarta adalah kegiatan akademik berbasis praktik kerja lapangan yang bertujuan menghubungkan pengetahuan teoritis mahasiswa dengan pengalaman nyata di dunia kerja profesional sesuai bidang keilmuannya.
+      </p>
+
+    
+	
+	
+	<div class="btn-group">
+
+  <!-- MENU KP -->
+  <div class="dropdown">
+
+    <a href="#" class="btn btn-primary dropdown-btn">
+
+      <i class="fa-solid fa-user-plus"></i>
+
+      Kerja Praktek (KP)
+
+      <i class="fa-solid fa-caret-down"></i>
+
+    </a>
+
+    <div class="dropdown-content">
+
+      <a href="daftar-kp.html">
+        Pendaftaran Peserta KP
+      </a>
+
+      <a href="daftar-ujian-kp.html">
+        Pendaftaran Ujian KP
+      </a>
+
+      <a href="upload-revisi-kp.html">
+        Unggah Revisi Laporan Akhir KP
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- MENU DOWNLOAD -->
+  <div class="dropdown">
+
+    <a href="#" class="btn btn-secondary dropdown-btn">
+
+      <i class="fa-solid fa-book"></i>
+
+      Download Panduan
+
+      <i class="fa-solid fa-caret-down"></i>
+
+    </a>
+
+    <div class="dropdown-content">
+
+      <a href="panduanpplsaintek_ver2025.pdf" download>
+        Download Panduan KP
+      </a>
+
+      <a href="https://drive.google.com/file/d/1T44lbxSWcoKDOadISboR4XuE6LzDNtsV/view?usp=drive_link" download>
+        Download Template Surat
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= PROGRAM STUDI ================= -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>Program Studi</h2>
+
+      <p>
+        Fakultas Sains dan Teknologi
+      </p>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <img src="images/lingkungan.jpg"
+        class="prodi-logo">
+
+        <h3>Ilmu Lingkungan</h3>
+
+        <p>
+          Kerja Praktek fokus pada mitigasi perubahan iklim,
+          jasa lingkungan, AMDAL,
+          rekayasa lingkungan,
+          dan pengelolaan SDA.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <img src="images/pangan.jpg"
+        class="prodi-logo">
+
+        <h3>Teknologi Pangan</h3>
+
+        <p>
+          Kerja Praktek fokus pada produksi, pengujian mutu, keamanan pangan,
+          serta riset pengembangan pangan di industri halal
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <img src="images/bioteknologi.jpg"
+        class="prodi-logo">
+
+        <h3>Bioteknologi</h3>
+
+        <p>
+          Kerja Praktek fokus pada pengembangan di laboratorium riset,industri bioteknologi dan/atau di lembaga kesehatan.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <img src="images/sainsdata.png"
+        class="prodi-logo">
+
+        <h3>Sains Data</h3>
+
+        <p>
+          Kerja Praktek fokus pada analisis data, machine learning,
+          dashboard visualisasi data
+          dan pengambilan keputusan.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <img src="images/informatika.png"
+        class="prodi-logo">
+
+        <h3>Informatika</h3>
+
+        <p>
+          Kerja Praktek fokus pada pengembangan perangkat lunak,
+          multimedia,
+          dan implementasi AI di berbagai bidang.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+<!-- ================= BANNER ================= -->
+
+<div class="banner-section">
+
+
+
+<img
+src="images/banner-ppl.png"
+alt="Banner PPL">
+
+</div>
+
+
+  <!-- ================= TIMELINE ================= -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>Alur Pelaksanaan Kerja Praktek</h2>
+
+      <p>
+        Tahapan kegiatan Kerja Praktek
+      </p>
+
+    </div>
+
+    <div class="timeline-wrapper">
+
+      <div class="timeline-card">
+
+        <div class="number">1</div>
+
+        <h3>Pendaftaran</h3>
+
+        <p>
+          Mahasiswa melakukan registrasi
+          dan upload dokumen.
+        </p>
+
+      </div>
+
+      <div class="timeline-card">
+
+        <div class="number">2</div>
+
+        <h3>Verifikasi</h3>
+
+        <p>
+          Admin memeriksa data
+          dan kelengkapan berkas.
+        </p>
+
+      </div>
+
+      <div class="timeline-card">
+
+        <div class="number">3</div>
+
+        <h3>Pelaksanaan</h3>
+
+        <p>
+          Mahasiswa melaksanakan kegiatan
+          KP di instansi terkait.
+        </p>
+
+      </div>
+
+      <div class="timeline-card">
+
+        <div class="number">4</div>
+
+        <h3>Ujian</h3>
+
+        <p>
+          Seminar laporan dan ujian
+          akhir pelaksanaan KP.
+        </p>
+
+      </div>
+
+      <div class="timeline-card">
+
+        <div class="number">
+
+          <i class="fa-solid fa-download"></i>
+
+        </div>
+
+        <h3>Download Alur</h3>
+
+        <p>
+          Download gambaran lengkap
+          alur pelaksanaan KP.
+        </p>
+
+        <br>
+
+        <a href="images/alur-ppl.png"
+        download
+        class="btn btn-primary">
+
+          Download
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+ <footer>
+
+  <div class="footer-content">
+
+    <div class="footer-text">
+
+      <p>
+
+        Zona Koding © 2026 <br>
+
+        <span class="partof">
+          part of
+        </span>
+
+        Fakultas Sains dan Teknologi.
+        All Rights Reserved.
+
+      </p>
+
+      <p>
+        Universitas Islam Negeri Raden Mas Said Surakarta
+      </p>
+
+    </div>
+
+    <a href="https://wa.me/6282227451266"
+       target="_blank"
+       class="wa-admin">
+
+      <i class="fa-brands fa-whatsapp"></i>
+      Bantuan Sistem
+
+    </a>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

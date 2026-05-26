@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Upload Revisi Akhir Laporan Kerja Praktek (KP)</title>
+
+<!-- GOOGLE FONT -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- FONT AWESOME -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Poppins', sans-serif;
+
+background:
+linear-gradient(
+135deg,
+#eef4ff,
+#f8fbff
+);
+
+overflow-x:hidden;
+}
+
+/* ================= MAIN ================= */
+
+.main-wrapper{
+
+width:100%;
+
+min-height:100vh;
+
+padding:40px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+width:100%;
+
+max-width:1500px;
+
+margin:auto;
+
+background:white;
+
+border-radius:35px;
+
+overflow:hidden;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,0.08);
+}
+
+/* ================= FORM AREA ================= */
+
+.form-section{
+
+padding:50px;
+}
+
+/* ================= TITLE ================= */
+
+.title-box{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+margin-bottom:35px;
+}
+
+.title-icon{
+
+width:82px;
+height:82px;
+
+border-radius:50%;
+
+background:#edf4ff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border:2px solid #d7e5ff;
+
+color:#0d47b5;
+
+font-size:36px;
+}
+
+.title-text h1{
+
+font-size:52px;
+
+color:#0d47b5;
+
+margin-bottom:8px;
+}
+
+.title-text p{
+
+color:#666;
+
+font-size:20px;
+}
+
+/* ================= GUIDE ================= */
+
+.guide-box{
+
+background:#edf4ff;
+
+border:2px solid #c9dcff;
+
+border-radius:24px;
+
+padding:28px;
+
+margin-bottom:35px;
+}
+
+.guide-box h3{
+
+color:#0d47b5;
+
+margin-bottom:18px;
+
+font-size:24px;
+}
+
+.guide-box p{
+
+color:#444;
+
+line-height:1.8;
+
+margin-bottom:14px;
+}
+
+.guide-box ul{
+
+padding-left:22px;
+}
+
+.guide-box li{
+
+margin-bottom:12px;
+
+line-height:1.8;
+}
+
+.required{
+
+color:red;
+
+font-weight:600;
+}
+
+/* ================= FORM ================= */
+
+.form-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:22px;
+}
+
+.form-group{
+
+display:flex;
+
+flex-direction:column;
+}
+
+.full{
+
+grid-column:1/-1;
+}
+
+.form-group label{
+
+margin-bottom:10px;
+
+font-weight:600;
+
+color:#0d47b5;
+}
+
+.form-group input,
+.form-group select{
+
+height:58px;
+
+border-radius:15px;
+
+border:1px solid #d9e1f0;
+
+padding:0 18px;
+
+font-family:'Poppins', sans-serif;
+
+font-size:15px;
+
+outline:none;
+
+transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+border-color:#0d47b5;
+
+box-shadow:
+0 0 0 4px rgba(13,71,181,0.1);
+}
+
+/* ================= BUTTON ================= */
+
+.btn-submit{
+
+margin-top:30px;
+
+width:100%;
+
+height:65px;
+
+border:none;
+
+border-radius:16px;
+
+background:
+linear-gradient(
+90deg,
+#0d47b5,
+#005eff
+);
+
+color:white;
+
+font-size:20px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:0.3s;
+
+font-family:'Poppins', sans-serif;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+}
+
+.btn-submit:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 12px 28px rgba(0,94,255,0.25);
+
+}
+
+.loading-spinner{
+
+width:18px;
+height:18px;
+
+border:3px solid rgba(255,255,255,0.3);
+
+border-top:3px solid white;
+
+border-radius:50%;
+
+animation:spin 0.8s linear infinite;
+
+display:inline-block;
+
+
+
+margin-right:10px;
+flex-shrink:0;
+}
+
+@keyframes spin{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+/* ================= IMAGE AREA ================= */
+
+.image-section{
+
+padding:0 50px 50px;
+}
+
+.image-section img{
+
+width:100%;
+
+height:420px;
+
+object-fit:cover;
+
+border-radius:28px;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+width:100%;
+
+text-align:center;
+
+margin-top:35px;
+
+padding-top:20px;
+
+color:#5c6b82;
+
+font-size:15px;
+
+line-height:1.8;
+}
+
+.footer span{
+
+font-size:14px;
+
+color:#8a97ab;
+}
+
+/* ================= POPUP ================= */
+
+.success-box{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.45);
+
+display:none;
+
+align-items:center;
+justify-content:center;
+
+z-index:9999;
+}
+
+.success-content{
+
+width:90%;
+max-width:700px;
+
+max-height:90vh;
+
+overflow-y:auto;
+
+background:white;
+
+padding:40px;
+
+border-radius:28px;
+
+text-align:center;
+
+animation:popupShow 0.4s ease;
+}
+
+.success-content::-webkit-scrollbar{
+
+width:8px;
+}
+
+.success-content::-webkit-scrollbar-thumb{
+
+background:#c7d7f7;
+border-radius:10px;
+}
+.success-content::-webkit-scrollbar{
+
+width:8px;
+}
+
+.success-content::-webkit-scrollbar-thumb{
+
+background:#c7d7f7;
+border-radius:10px;
+}
+
+.success-content i{
+
+font-size:70px;
+
+color:#16a34a;
+
+margin-bottom:20px;
+}
+
+.success-content h2{
+
+color:#0d47b5;
+
+margin-bottom:20px;
+
+font-size:32px;
+}
+
+.success-content p{
+
+margin-bottom:10px;
+
+font-size:17px;
+
+color:#444;
+}
+
+@keyframes popupShow{
+
+from{
+
+transform:scale(0.7);
+opacity:0;
+}
+
+to{
+
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+/* ================= POPUP BUTTON ================= */
+
+.popup-buttons{
+
+display:flex;
+
+gap:15px;
+
+justify-content:center;
+
+margin-top:30px;
+
+flex-wrap:wrap;
+}
+
+.btn-popup{
+
+border:none;
+
+padding:14px 22px;
+
+border-radius:14px;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+font-family:'Poppins', sans-serif;
+
+transition:0.3s;
+}
+
+.btn-shot{
+
+background:#0d47b5;
+
+color:white;
+}
+
+.btn-close{
+
+background:#e5e7eb;
+
+color:#333;
+}
+
+#timeNow{
+
+margin-top:20px;
+
+padding-top:20px;
+
+border-top:1px solid #ddd;
+
+font-size:16px;
+
+color:#444;
+
+line-height:1.8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.main-wrapper{
+padding:20px;
+}
+
+.form-section{
+padding:30px 22px;
+}
+
+.image-section{
+padding:0 22px 30px;
+}
+
+.title-text h1{
+font-size:38px;
+}
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.image-section img{
+height:250px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+<div class="container">
+
+<!-- ================= FORM ================= -->
+
+<div class="form-section">
+
+<div class="title-box">
+
+<div class="title-icon">
+
+<i class="fa-solid fa-file-arrow-up"></i>
+
+</div>
+
+<div class="title-text">
+
+<h1>Upload Revisi Kerja Praktek</h1>
+
+<p>
+Unggah Revisi Laporan Akhir Kerja Praktek (KP)
+</p>
+
+</div>
+
+</div>
+
+<!-- GUIDE -->
+
+<div class="guide-box">
+
+<h3>
+
+<i class="fa-solid fa-circle-info"></i>
+
+Panduan Upload Dokumen
+
+</h3>
+
+<p>
+
+Silakan upload revisi laporan akhir KP sesuai arahan penguji (dalam format word/doc).
+
+</p>
+
+<ul>
+
+<li>
+Link Google Drive Revisi Laporan KP
+<span class="required">*</span>
+</li>
+
+</ul>
+
+<p style="margin-top:18px;">
+
+⚠️ Jangan lupa membuka akses Google Drive menjadi:
+
+<b>
+"Siapa saja yang memiliki link dapat melihat"
+</b>
+
+agar dokumen dapat diverifikasi oleh admin KP.
+
+</p>
+
+<p style="color:#b91c1c; font-weight:500;">
+
+Usahakan memberikan link Google Drive yang langsung mengarah pada dokumen yang dimaksud.
+Kesalahan dokumen akibat kelalaian pengunggahan menjadi tanggung jawab mahasiswa.
+
+</p>
+
+</div>
+
+<!-- FORM -->
+
+<form id="revisiForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Nama Lengkap</label>
+
+<input
+type="text"
+name="nama"
+required
+placeholder="Masukkan nama lengkap">
+
+</div>
+
+<div class="form-group">
+
+<label>NIM</label>
+
+<input
+type="text"
+name="nim"
+required
+placeholder="Masukkan NIM">
+
+</div>
+
+<div class="form-group">
+
+<label>Program Studi</label>
+
+<select
+name="prodi"
+required>
+
+<option value="">
+Pilih Program Studi
+</option>
+
+<option>Ilmu Lingkungan</option>
+
+<option>Teknologi Pangan</option>
+
+<option>Bioteknologi</option>
+
+<option>Sains Data</option>
+
+<option>Informatika</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Kelas</label>
+
+<input
+type="text"
+name="kelas"
+required
+placeholder="Contoh: A/ B">
+
+</div>
+
+<div class="form-group">
+
+<label>Angkatan</label>
+
+<input
+type="text"
+name="angkatan"
+required
+placeholder="Contoh: 2023">
+
+</div>
+
+<div class="form-group full">
+
+<label>
+Link Google Drive Revisi Laporan KP
+<span class="required">*</span>
+</label>
+
+<input
+type="url"
+name="link_revisi"
+required
+placeholder="Tempel link Google Drive">
+
+</div>
+
+</div>
+
+<button
+type="submit"
+class="btn-submit">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Kirim Revisi Laporan KP
+
+</button>
+
+</form>
+
+</div>
+
+<!-- ================= IMAGE ================= -->
+
+<div class="image-section">
+
+<img src="images/upload-revisi-ppl.png">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+Zona Koding © 2026 <br>
+
+<span>
+part of Fakultas Sains dan Teknologi.
+<p>
+Universitas Islam Negeri Raden Mas Said Surakarta
+. All Rights Reserved.
+</p>
+</span>
+
+</div>
+
+<!-- ================= POPUP KUESIONER ================= -->
+
+<div id="surveyPopup" class="success-box">
+
+
+
+<div class="success-content">
+
+<h2 style="margin-bottom:25px;">
+
+Kuesioner Singkat
+
+</h2>
+
+<p style="margin-bottom:25px;">
+
+Silakan isi kuesioner berikut sebelum mengirim revisi laporan KP.
+
+</p>
+
+<!-- ================= KATEGORI A ================= -->
+
+<h3 style="
+margin-top:25px;
+margin-bottom:15px;
+color:#0d47b5;
+">
+Kategori A — Pelayanan Administrasi Fakultas
+</h3>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>1. Bagaimana kemudahan proses pendaftaran Kerja Praktek (KP) di Fakultas?</label>
+<select id="q1">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Mudah</option>
+<option>Mudah</option>
+<option>Cukup</option>
+<option>Sulit</option>
+<option>Sangat Sulit</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>2. Apakah informasi mengenai prosedur KP mudah dipahami oleh mahasiswa?</label>
+<select id="q2">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Mudah</option>
+<option>Mudah</option>
+<option>Cukup</option>
+<option>Sulit</option>
+<option>Sangat Sulit</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>3. Bagaimana kualitas pelayanan administrasi KP di Fakultas?</label>
+<select id="q3">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Baik</option>
+<option>Baik</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>4. Apakah admin KP memberikan respon yang cepat terhadap pertanyaan mahasiswa?</label>
+<select id="q4">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Cepat</option>
+<option>Cepat</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>5. Apakah pengumuman dan informasi KP mudah diperoleh mahasiswa?</label>
+<select id="q5">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Mudah</option>
+<option>Mudah</option>
+<option>Cukup</option>
+<option>Sulit</option>
+<option>Sangat Sulit</option>
+</select>
+</div>
+
+<!-- ================= KATEGORI B ================= -->
+
+<h3 style="
+margin-top:25px;
+margin-bottom:15px;
+color:#0d47b5;
+">
+Kategori B — Pemanfaatan Teknologi Informasi (IT)
+</h3>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>6. Apakah sistem/website KP mudah digunakan?</label>
+<select id="q6">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Mudah</option>
+<option>Mudah</option>
+<option>Cukup</option>
+<option>Sulit</option>
+<option>Sangat Sulit</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>7. Apakah tampilan sistem KP nyaman dan mudah dipahami?</label>
+<select id="q7">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Mudah</option>
+<option>Mudah</option>
+<option>Cukup</option>
+<option>Sulit</option>
+<option>Sangat Sulit</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>8. Apakah proses upload dokumen pada sistem KP berjalan dengan baik?</label>
+<select id="q8">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Baik</option>
+<option>Baik</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>9. Apakah pemanfaatan teknologi informasi pada layanan KP membantu mahasiswa?</label>
+<select id="q9">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Membantu</option>
+<option>Membantu</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>10. Apakah sistem KP mempermudah mahasiswa dalam mengakses layanan administrasi?</label>
+<select id="q10">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Mudah</option>
+<option>Mudah</option>
+<option>Cukup</option>
+<option>Sulit</option>
+<option>Sangat Sulit</option>
+</select>
+</div>
+
+<!-- ================= KATEGORI C ================= -->
+
+<h3 style="
+margin-top:25px;
+margin-bottom:15px;
+color:#0d47b5;
+">
+Kategori C — Pendampingan Dosen Pembimbing
+</h3>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>11. Apakah dosen pembimbing memberikan arahan yang jelas selama KP?</label>
+<select id="q11">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Jelas</option>
+<option>Jelas</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>12. Apakah dosen pembimbing mudah dihubungi ketika mahasiswa mengalami kendala?</label>
+<select id="q12">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Mudah</option>
+<option>Mudah</option>
+<option>Cukup</option>
+<option>Sulit</option>
+<option>Sangat Sulit</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>13. Bagaimana kualitas bimbingan dosen selama pelaksanaan KP?</label>
+<select id="q13">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Baik</option>
+<option>Baik</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>14. Apakah dosen pembimbing membantu mahasiswa dalam menyelesaikan permasalahan selama KP?</label>
+<select id="q14">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Membantu</option>
+<option>Membantu</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>15. Apakah dosen pembimbing memberikan evaluasi dan masukan yang bermanfaat?</label>
+<select id="q15">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Bermanfaat</option>
+<option>Bermanfaat</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<!-- ================= KATEGORI D ================= -->
+
+<h3 style="
+margin-top:25px;
+margin-bottom:15px;
+color:#0d47b5;
+">
+Kategori D — Pengalaman di Institusi/Tempat KP
+</h3>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>16. Apakah institusi/tempat KP memberikan lingkungan kerja yang baik?</label>
+<select id="q16">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Baik</option>
+<option>Baik</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>17. Apakah pihak institusi memberikan pendampingan yang baik selama KP berlangsung?</label>
+<select id="q17">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Baik</option>
+<option>Baik</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>18. Apakah tugas yang diberikan institusi sesuai dengan bidang keilmuan mahasiswa?</label>
+<select id="q18">
+<option value="">Pilih Jawaban</option>
+<option>Sangat sesuai</option>
+<option>Sesuai</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>19. Apakah kegiatan KP membantu meningkatkan keterampilan dan pengalaman kerja mahasiswa?</label>
+<select id="q19">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Membantu</option>
+<option>Membantu</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<!-- ================= KATEGORI E ================= -->
+
+<h3 style="
+margin-top:25px;
+margin-bottom:15px;
+color:#0d47b5;
+">
+Kategori E — Evaluasi Umum
+</h3>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+<label>20. Secara keseluruhan, bagaimana pelaksanaan layanan Kerja Praktek (KP) di Fakultas Sains dan Teknologi?</label>
+<select id="q20">
+<option value="">Pilih Jawaban</option>
+<option>Sangat Baik</option>
+<option>Baik</option>
+<option>Cukup</option>
+<option>Kurang</option>
+<option>Sangat Kurang</option>
+</select>
+</div>
+
+<div class="form-group" style="text-align:left; margin-bottom:20px;">
+
+<label>
+21. Saran atau masukan untuk peningkatan layanan KP di masa mendatang
+</label>
+
+<textarea
+id="q21"
+rows="5"
+style="
+width:100%;
+padding:15px;
+border-radius:15px;
+border:1px solid #d9e1f0;
+font-family:Poppins;
+resize:none;
+"></textarea>
+
+</div>
+
+
+
+<div class="popup-buttons">
+
+<button
+id="surveyBtn"
+class="btn-popup btn-shot"
+onclick="submitSurvey()">
+
+Kirim Kuesioner
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= POPUP SUCCESS ================= -->
+
+<div id="successBox" class="success-box">
+
+<div class="success-content" id="captureArea">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h2>
+Upload Berhasil
+</h2>
+
+<p style="margin-top:15px; line-height:1.8;">
+
+Terimakasih anda sudah berhasil mengisi kuesioner.
+Upload Revisi Laporan KP anda berhasil.
+Data sudah terekam.
+
+<br><br>
+
+<b>
+Klik Screenshot untuk menyimpan bukti upload.
+</b>
+
+</p>
+
+<div id="successData"></div>
+
+<div id="timeNow"></div>
+
+<div class="popup-buttons">
+
+<button
+class="btn-popup btn-shot"
+onclick="downloadScreenshot()">
+
+📸 Screenshot
+
+</button>
+
+<button
+class="btn-popup btn-close"
+onclick="closePopup()">
+
+❌ Close
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= HTML2CANVAS ================= -->
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+```html
+<script>
+
+const scriptURL =
+"https://script.google.com/macros/s/AKfycbwn7_9tiCdJ9pNLA-A2ZUAMGsMn8mRMZB51ZKHA13ugH92mwDmMCBqfqWPkrD1Pa-uO/exec";
+
+const form =
+document.getElementById("revisiForm");
+
+let surveyDone = false;
+
+/* ================= SUBMIT FORM ================= */
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+
+
+/* ================= DATA REVISI ================= */
+
+const data = {
+
+formType:"revisi",
+
+nama: form.nama.value,
+
+nim: form.nim.value,
+
+prodi: form.prodi.value,
+
+kelas: form.kelas.value,
+
+angkatan: form.angkatan.value,
+
+link_revisi:
+form.link_revisi.value
+
+};
+
+/* ================= CEK SURVEY ================= */
+
+if(!surveyDone){
+
+document.getElementById(
+"surveyPopup"
+).style.display = "flex";
+
+return;
+
+}
+
+/* ================= KIRIM REVISI ================= */
+
+fetch(scriptURL, {
+
+method:"POST",
+
+body: JSON.stringify(data)
+
+})
+
+.then(response => response.text())
+
+.then(result => {
+
+/* ================= SUCCESS ================= */
+
+const successBox =
+document.getElementById("successBox");
+
+const successData =
+document.getElementById("successData");
+
+const timeNow =
+document.getElementById("timeNow");
+
+const now = new Date();
+
+const tanggal =
+now.toLocaleDateString("id-ID", {
+
+day:"numeric",
+
+month:"long",
+
+year:"numeric"
+
+});
+
+const jam =
+now.toLocaleTimeString("id-ID");
+
+successData.innerHTML = `
+
+<p><b>Nama :</b> ${form.nama.value}</p>
+
+<p><b>NIM :</b> ${form.nim.value}</p>
+
+<p><b>Program Studi :</b> ${form.prodi.value}</p>
+
+<p><b>Kelas :</b> ${form.kelas.value}</p>
+
+<p><b>Angkatan :</b> ${form.angkatan.value}</p>
+
+`;
+
+timeNow.innerHTML = `
+
+<p><b>Tanggal :</b> ${tanggal}</p>
+
+<p><b>Jam :</b> ${jam}</p>
+
+`;
+
+successBox.style.display = "flex";
+
+form.reset();
+
+surveyDone = false;
+submitBtn.disabled = false;
+
+
+})
+
+.catch(error => {
+
+
+
+console.log(error);
+
+});
+
+});
+
+/* ================= SUBMIT SURVEY ================= */
+
+function submitSurvey(){
+const surveyBtn =
+document.getElementById("surveyBtn");
+
+surveyBtn.disabled = true;
+
+surveyBtn.innerHTML =
+'<span class="loading-spinner"></span> Sedang Mengirim...sabar ya';
+
+/* VALIDASI */
+
+for(let i=1; i<=20; i++){
+
+const jawaban =
+document.getElementById("q"+i).value;
+
+if(jawaban === ""){
+
+alert(
+"Silakan isi seluruh kuesioner terlebih dahulu."
+);
+
+return;
+
+}
+
+}
+
+/* ================= DATA SURVEY ================= */
+
+const dataSurvey = {
+
+formType:"survey",
+
+nama: form.nama.value,
+
+nim: form.nim.value,
+
+q1: document.getElementById("q1").value,
+q2: document.getElementById("q2").value,
+q3: document.getElementById("q3").value,
+q4: document.getElementById("q4").value,
+q5: document.getElementById("q5").value,
+
+q6: document.getElementById("q6").value,
+q7: document.getElementById("q7").value,
+q8: document.getElementById("q8").value,
+q9: document.getElementById("q9").value,
+q10: document.getElementById("q10").value,
+
+q11: document.getElementById("q11").value,
+q12: document.getElementById("q12").value,
+q13: document.getElementById("q13").value,
+q14: document.getElementById("q14").value,
+q15: document.getElementById("q15").value,
+
+q16: document.getElementById("q16").value,
+q17: document.getElementById("q17").value,
+q18: document.getElementById("q18").value,
+q19: document.getElementById("q19").value,
+q20: document.getElementById("q20").value,
+
+q21: document.getElementById("q21").value
+
+};
+
+/* ================= KIRIM SURVEY ================= */
+
+fetch(scriptURL, {
+
+method:"POST",
+
+body: JSON.stringify(dataSurvey)
+
+})
+
+.then(response => response.text())
+
+.then(result => {
+
+/* ================= TUTUP POPUP ================= */
+
+document.getElementById(
+"surveyPopup"
+).style.display = "none";
+
+surveyDone = true;
+
+/* ================= LANJUT SUBMIT ================= */
+
+form.requestSubmit();
+
+surveyBtn.disabled = false;
+
+surveyBtn.innerHTML =
+'Kirim Kuesioner';
+
+})
+
+.catch(error => {
+surveyBtn.disabled = false;
+
+surveyBtn.innerHTML =
+'Kirim Kuesioner';
+
+alert("Survey gagal dikirim");
+
+console.log(error);
+
+});
+
+}
+
+/* ================= CLOSE POPUP ================= */
+
+function closePopup(){
+
+document.getElementById(
+"successBox"
+).style.display = "none";
+
+}
+
+/* ================= SCREENSHOT ================= */
+
+function downloadScreenshot(){
+
+const area =
+document.getElementById("captureArea");
+
+const popupBg =
+document.getElementById("successBox");
+
+popupBg.style.background = "white";
+
+html2canvas(area, {
+
+backgroundColor:"#ffffff",
+scale:2
+
+}).then(function(canvas){
+
+const image =
+canvas.toDataURL("image/png");
+
+const link =
+document.createElement("a");
+
+link.href = image;
+
+link.download =
+"Bukti-Upload-Revisi-KP.png";
+
+link.click();
+
+popupBg.style.background =
+"rgba(0,0,0,0.45)";
+
+});
+
+}
+
+</script>
+```
+
+
+</body>
+
+</html>
