@@ -1012,7 +1012,7 @@ onclick="closePopup()">
 /* ================= URL APPS SCRIPT ================= */
 
  const scriptURL =
-" https://script.google.com/macros/s/AKfycbzWiNzAIhDj9h8pyakQNdJJH8dDGLtuyvJ_KjsT_iSaGr2t8kgrnsWLf2uXOCirBj2M9A/exec";
+"https://script.google.com/macros/s/AKfycbzWiNzAIhDj9h8pyakQNdJJH8dDGLtuyvJ_KjsT_iSaGr2t8kgrnsWLf2uXOCirBj2M9A/exec";
 
 
  
@@ -1067,6 +1067,12 @@ link_dpa: form.link_dpa.value
 };
 /* ================= FETCH ================= */
 
+/* ================= FETCH ================= */
+
+console.log("DATA YANG DIKIRIM:", data);
+
+alert("FETCH DIJALANKAN");
+
 fetch(scriptURL, {
 
 method: "POST",
@@ -1078,6 +1084,21 @@ body: JSON.stringify(data)
 .then(response => response.text())
 
 .then(result => {
+ .then(result => {
+
+console.log("RESPON SERVER:", result);
+
+if(result !== "SUCCESS"){
+
+  alert("SERVER MENGEMBALIKAN : " + result);
+
+  submitBtn.disabled = false;
+
+  submitBtn.innerHTML =
+  '<i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran';
+
+  return;
+}
 
 /* ================= ELEMENT ================= */
 
